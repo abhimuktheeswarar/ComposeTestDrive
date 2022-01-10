@@ -10,7 +10,22 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.ComposeTestDrive">
         <activity
-            android:name="com.msabhi.composedrive.MainActivity"
+            android:name=".mixed.MixedCounterActivity"
+            android:exported="false"
+            android:theme="@style/Theme.ComposeTestDrive.NoActionBar" />
+        <activity
+            android:name=".RootActivity"
+            android:exported="false"
+            android:label="@string/title_activity_root"
+            android:theme="@style/Theme.ComposeTestDrive.NoActionBar" />
+        <activity
+            android:name=".classic.ClassicCounterActivity"
+            android:exported="false" />
+        <activity
+            android:name=".BottomUpActivity"
+            android:exported="false" />
+        <activity
+            android:name=".MainActivity"
             android:exported="true"
             android:label="@string/app_name"
             android:theme="@style/Theme.ComposeTestDrive.NoActionBar">
