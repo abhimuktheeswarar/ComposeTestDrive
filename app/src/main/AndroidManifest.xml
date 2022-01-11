@@ -41,6 +41,9 @@
         <activity
             android:name=".declarative.DeclarativeCounterActivity"
             android:theme="@style/Theme.ComposeTestDrive.NoActionBar" />
+        <activity
+            android:name=".declarative.DeclarativeListActivity"
+            android:theme="@style/Theme.ComposeTestDrive.NoActionBar" />
     </application>
 
 </manifest>

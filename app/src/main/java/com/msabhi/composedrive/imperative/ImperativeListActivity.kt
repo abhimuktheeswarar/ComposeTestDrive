@@ -25,17 +25,17 @@ class ImperativeListActivity : AppCompatActivity() {
         recyclerView.layoutManager = layoutManager
         recyclerView.adapter = adapter
 
-        val items = mutableListOf<Item>()
+        val items = mutableListOf<ImperativeItem>()
 
         repeat(50) { i ->
-            items.add(Item(i, "Title $i", "Subtitle $i"))
+            items.add(ImperativeItem(i, "Title $i", "Subtitle $i"))
         }
 
         adapter.submitList(items)
     }
 }
 
-data class Item(val id: Any, val title: String, val subTitle: String)
+data class ImperativeItem(val id: Any, val title: String, val subTitle: String)
 
 class ImperativeItemViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
 
@@ -44,18 +44,18 @@ class ImperativeItemViewHolder(itemView: View) : RecyclerView.ViewHolder(itemVie
     val subTitle by lazy { itemView.findViewById<TextView>(R.id.text_item_subTitle) }
 }
 
-object ItemDiffCallback : DiffUtil.ItemCallback<Item>() {
+object ItemDiffCallback : DiffUtil.ItemCallback<ImperativeItem>() {
 
-    override fun areItemsTheSame(oldItem: Item, newItem: Item): Boolean {
+    override fun areItemsTheSame(oldItem: ImperativeItem, newItem: ImperativeItem): Boolean {
         return oldItem.id == newItem.id
     }
 
-    override fun areContentsTheSame(oldItem: Item, newItem: Item): Boolean {
+    override fun areContentsTheSame(oldItem: ImperativeItem, newItem: ImperativeItem): Boolean {
         return oldItem == newItem
     }
 }
 
-class ItemListAdapter : ListAdapter<Item, ImperativeItemViewHolder>(ItemDiffCallback) {
+class ItemListAdapter : ListAdapter<ImperativeItem, ImperativeItemViewHolder>(ItemDiffCallback) {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ImperativeItemViewHolder {
         val itemView = LayoutInflater.from(parent.context)

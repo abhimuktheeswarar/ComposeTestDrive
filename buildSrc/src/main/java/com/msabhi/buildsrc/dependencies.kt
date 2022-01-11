@@ -12,6 +12,7 @@ object Libs {
         const val insets = "com.google.accompanist:accompanist-insets:$version"
         const val systemUiController =
             "com.google.accompanist:accompanist-systemuicontroller:$version"
+        const val drawablePainter = "com.google.accompanist:accompanist-drawablepainter:$version"
     }
 
     object Kotlin {
