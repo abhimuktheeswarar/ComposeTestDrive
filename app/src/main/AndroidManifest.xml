@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.ComposeTestDrive">
         <activity
+            android:name=".imperative.ImperativeListActivity"
+            android:exported="false" />
+        <activity
             android:name=".mixed.MixedCounterActivity"
             android:exported="false"
             android:theme="@style/Theme.ComposeTestDrive.NoActionBar" />
@@ -19,7 +22,7 @@
             android:label="@string/title_activity_root"
             android:theme="@style/Theme.ComposeTestDrive.NoActionBar" />
         <activity
-            android:name=".classic.ClassicCounterActivity"
+            android:name=".imperative.ImperativeCounterActivity"
             android:exported="false" />
         <activity
             android:name=".BottomUpActivity"
@@ -35,6 +38,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".declarative.DeclarativeCounterActivity"
+            android:theme="@style/Theme.ComposeTestDrive.NoActionBar" />
     </application>
 
 </manifest>

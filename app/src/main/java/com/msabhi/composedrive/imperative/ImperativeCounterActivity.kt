@@ -1,4 +1,4 @@
-package com.msabhi.composedrive.classic
+package com.msabhi.composedrive.imperative
 
 import android.os.Bundle
 import android.widget.Button
@@ -6,9 +6,8 @@ import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import com.msabhi.composedrive.R
 
-class ClassicCounterActivity : AppCompatActivity() {
+class ImperativeCounterActivity : AppCompatActivity() {
 
-    //private val mutableStateFlow = MutableStateFlow(0)
     private var count = 0
 
     private val buttonDecrease by lazy { findViewById<Button>(R.id.button_decrease) }
@@ -17,24 +16,18 @@ class ClassicCounterActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_classic_counter)
+        setContentView(R.layout.activity_imperative_counter)
 
         textCount.text = count.toString()
 
         buttonDecrease.setOnClickListener {
             count--
             textCount.text = count.toString()
-            //mutableStateFlow.value = count - 1
         }
 
         buttonIncrease.setOnClickListener {
             count++
             textCount.text = count.toString()
-            //mutableStateFlow.value = count+1
         }
-
-        /*lifecycleScope.launch {
-            mutableStateFlow.collect { textCount.text = it.toString() }
-        }*/
     }
 }

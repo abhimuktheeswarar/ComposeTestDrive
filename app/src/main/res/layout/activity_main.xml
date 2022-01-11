@@ -1,29 +1,69 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:padding="16dp">
 
     <com.google.android.material.button.MaterialButton
-        android:id="@+id/button_open_classic_counter"
-        android:layout_width="wrap_content"
+        android:id="@+id/button_open_imperative_counter"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:text="open classic counter" />
+        android:layout_marginEnd="8dp"
+        android:text="imperative counter"
+        app:layout_constraintEnd_toStartOf="@id/button_open_declarative_counter"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/button_open_declarative_counter"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:text="declarative counter"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/button_open_imperative_counter"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/button_open_imperative_list"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:text="imperative list"
+        app:layout_constraintEnd_toStartOf="@id/button_open_declarative_list"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/button_open_imperative_counter" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/button_open_declarative_list"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:text="declarative list"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/button_open_imperative_list"
+        app:layout_constraintTop_toBottomOf="@id/button_open_declarative_counter" />
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/button_open_pure_compose"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:text="open pure compose" />
+        android:layout_marginEnd="8dp"
+        android:text="pure compose"
+        app:layout_constraintEnd_toStartOf="@id/button_open_compose_mixed"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/button_open_imperative_list" />
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/button_open_compose_mixed"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:text="open mixed compose" />
+        android:layout_marginStart="8dp"
+        android:text="mixed compose"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/button_open_pure_compose"
+        app:layout_constraintTop_toBottomOf="@id/button_open_declarative_list" />
 
-</LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
