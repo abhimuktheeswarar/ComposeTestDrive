@@ -1,11 +1,13 @@
 package com.msabhi.composedrive.routes
 
 import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material.Button
+import androidx.compose.material.OutlinedTextField
 import androidx.compose.material.Text
-import androidx.compose.runtime.Composable
+import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
@@ -25,8 +27,18 @@ fun HomeRoute(modifier: Modifier = Modifier, navigateToCounter: () -> Unit) {
             .padding(24.dp), contentAlignment = Alignment.Center
     ) {
 
-        Button(onClick = navigateToCounter) {
-            Text(text = "OPEN COUNTER")
+        Column(horizontalAlignment = Alignment.CenterHorizontally) {
+            Button(onClick = navigateToCounter) {
+                Text(text = "OPEN COUNTER")
+            }
+
+            var name by remember { mutableStateOf("") }
+
+            OutlinedTextField(
+                value = name,
+                onValueChange = { name = it },
+                label = { Text("Name") }
+            )
         }
     }
 }
