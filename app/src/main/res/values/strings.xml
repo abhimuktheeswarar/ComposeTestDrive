@@ -3,4 +3,5 @@
     <string name="decrease">decrease</string>
     <string name="increase">increase</string>
     <string name="title_activity_root">RootActivity</string>
+    <string name="title_activity_starter_compose">StarterComposeActivity</string>
 </resources>

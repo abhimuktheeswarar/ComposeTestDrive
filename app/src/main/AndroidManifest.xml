@@ -10,6 +10,11 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.ComposeTestDrive">
         <activity
+            android:name=".declarative.StarterComposeActivity"
+            android:exported="false"
+            android:label="@string/title_activity_starter_compose"
+            android:theme="@style/Theme.ComposeTestDrive.NoActionBar" />
+        <activity
             android:name=".imperative.ImperativeListActivity"
             android:exported="false" />
         <activity
